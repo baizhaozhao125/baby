@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>-->
     </div>
     <router-view />
-    <van-tabbar v-model="active">
+    <!-- <van-tabbar v-model="active">
       <van-tabbar-item>
         <span>亲宝宝</span>
         <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.inactive" />
@@ -42,34 +42,34 @@
           slot-scope="props"
         />
       </van-tabbar-item>
-    </van-tabbar>
-  </div>
+    </van-tabbar>-->
+  </div> 
 </template>
 <script>
 export default {
-  data() {
-    return {
-      active: 4,
-      icon: {
-        active: "../assets/Cart/1.png",
-        inactive: "../assets/Cart/1.png",
-        active_yuer: "../assets/Cart/2.png",
-        inactive_yuer: "../assets/Cart/2.png",
-        active_shenghuo: "../assets/Cart/3.png",
-        inactive_shenghuo: "../assets/Cart/3.png",
-        active_xiaoxi: "../assets/Cart/4.png",
-        inactive_xiaoxi: "../assets/Cart/4.png",
-        active_wode: "../assets/Cart/5.png",
-        inactive_wode: "../assets/Cart/5.png"
-      }
-    };
-  },
-  methods:{
-     pushUrl(){
-      // 跳转到商城(生活)
-      this.$router.push("/Product");
-    }
-  }
+  // data() {
+  //   return {
+  //     active: 4,
+  //     icon: {
+  //       active: "../assets/Cart/1.png",
+  //       inactive: "../assets/Cart/1.png",
+  //       active_yuer: "../assets/Cart/2.png",
+  //       inactive_yuer: "../assets/Cart/2.png",
+  //       active_shenghuo: "../assets/Cart/3.png",
+  //       inactive_shenghuo: "../assets/Cart/3.png",
+  //       active_xiaoxi: "../assets/Cart/4.png",
+  //       inactive_xiaoxi: "../assets/Cart/4.png",
+  //       active_wode: "../assets/Cart/5.png",
+  //       inactive_wode: "../assets/Cart/5.png"
+  //     }
+  //   };
+  // },
+  // methods:{
+  //    pushUrl(){
+  //     // 跳转到商城(生活)
+  //     this.$router.push("/Product");
+  //   }
+  // }
 }
 </script>
 <style>

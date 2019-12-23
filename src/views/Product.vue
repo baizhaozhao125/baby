@@ -23,7 +23,8 @@
         </div>
         <!-- 导航图标01 -->
         <div class="icon">
-          <img src="../assets/Details/icon1.png" alt />
+          <!-- 点击跳转到纸尿裤详情页 -->
+          <img @click="Diapers" src="../assets/Details/icon1.png" alt />
           <img src="../assets/Details/icon2.png" alt />
           <img src="../assets/Details/icon3.png" alt />
           <img src="../assets/Details/icon4.png" alt />
@@ -62,7 +63,7 @@
               <van-tab title="孕期">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of list" :key="i">
+                  <div class="p_item" @click="go_details" v-for="(item,i) of list" :key="i">
                     <!-- 商品图片 -->
                     <img src="../assets/Details/product_img5.jpg" />
                     <!-- 商品名称 -->
@@ -104,7 +105,7 @@
               <van-tab title="3岁+">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of list" :key="i">
+                  <div class="p_item"  v-for="(item,i) of list" :key="i">
                     <!-- 商品图片 -->
                     <img src="../assets/Details/product_img3.jpg" />
                     <!-- 商品名称 -->
@@ -171,6 +172,14 @@ export default {
     };
   },
   methods: {
+    // 跳转到商品详情
+    go_details(){
+      this.$router.push("/Details");
+    },
+    // 跳转到纸尿裤详情页
+    Diapers(){
+      this.$router.push("/ProductDiapers");
+    },
     // 加载更多
     loadMore() {},
     // 跳转到购物车页面
@@ -199,7 +208,7 @@ export default {
 
 /* 商城详细描述样式 */
 .p_list {
-  /* 弹性布局 子元素两端对象 */
+  /* 弹性布局 子元素两端对齐 */
   display: flex;
   flex-wrap: wrap; /*子元素换行 */
   justify-content: space-between;
