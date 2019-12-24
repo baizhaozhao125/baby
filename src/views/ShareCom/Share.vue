@@ -24,10 +24,12 @@
       <p class="la">分享宝宝的精彩瞬间</p>
     </div>
     <friends :name="name"></friends>
+    <home-footer></home-footer>
   </div>
 </template>
 <script>
 import friends from "./Friends.vue"
+import HomeFooter from "../pages/footer";
 export default {
   data(){
     return{
@@ -35,7 +37,7 @@ export default {
       age:4
     }
   },
-  components:{friends},
+  components:{friends,HomeFooter},
   methods:{
     change(){
     this.$router.push("/Shar")
@@ -53,7 +55,7 @@ p{
   margin:0
 }
 .bg{
- background-image:url("../../assets/chat/2.jpg");
+ background-image:url("../../../public/img/2.jpg");
  width:100%;
  height:13rem;
  color: #000;

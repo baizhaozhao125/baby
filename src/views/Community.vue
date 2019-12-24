@@ -8,7 +8,7 @@
   left-icon="volume-o"/>
 
       <!-- <input type="text" placeholder="宝宝成长计划"><button>搜索</button> -->
-      <van-search placeholder="请输入搜索关键词" v-model="value" />
+      <van-search placeholder="请输入搜索关键词" />
      </div>
         <!-- 小图标基础用法 -->
         <div style="display:flex;justify-content:space-around">
@@ -87,12 +87,16 @@
 
           </h6></h5>  
         </div>
-   </div>         
+        <home-footer></home-footer>
+   </div>    
 </template>
 
 <script>
+import HomeFooter from "./pages/footer";
 export default {
-
+  components: {
+    HomeFooter
+  },
 }
 </script>
 

@@ -1,6 +1,6 @@
+
 <template>
   <div id="parent">
-    <div class="active5">
     <!-- 顶部 -->
     <div class="content-title">
       <a href>
@@ -36,72 +36,37 @@
     <div class="d1"></div>
     <van-cell title="亲宝小伴" is-link value="AI早教机" icon="../assets/Cart/xiaoban.png" />
     <div class="d1"></div>
-    <van-cell title="购物车" is-link icon="../assets/Cart/gouwuche.png" url="/shop" />
+    <van-cell title="购物车" is-link icon="../assets/Cart/gouwuche.png" url="/shopping" />
     <van-cell title="我的订单" is-link icon="../assets/Cart/dingdan.png" />
     <van-cell title="优惠券" is-link icon="../assets/Cart/youhuijuan.png" />
     <div class="d1"></div>
     <van-cell title="收藏" is-link icon="../assets/Cart/shoucang.png" />
     <div class="d2"></div>
-    </div>
-    <!-- 底部导航 -->
-    <van-tabbar v-model="active" >
-      <van-tabbar-item>
-        <span>亲宝宝</span>
-        <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.inactive" />
-      </van-tabbar-item>
-      <van-tabbar-item>
-        <span>育儿</span>
-        <img
-          :src="props.active ? icon.active_yuer : icon.inactive_yuer"
-          slot="icon"
-          slot-scope="props"
-        />
-      </van-tabbar-item>
-      <van-tabbar-item @click="pushUrl">
-
-        <span>生活</span>
-        <img
-          :src="props.active ? icon.active_shenghuo : icon.inactive_shenghuo"
-          slot="icon"
-          slot-scope="props"
-        />
-      </van-tabbar-item>
-      <van-tabbar-item>
-        <span>消息</span>
-        <img
-          :src="props.active ? icon.active_xiaoxi : icon.inactive_xiaoxi"
-          slot="icon"
-          slot-scope="props"
-        />
-      </van-tabbar-item>
-      <van-tabbar-item>
-        <span>我的</span>
-        <img
-          :src="props.active ? icon.active_wode : icon.inactive_wode"
-          slot="icon"
-          slot-scope="props"
-        />
-      </van-tabbar-item>
-    </van-tabbar>
+    <home-footer></home-footer>
   </div>
 </template>
 
 <script>
+import HomeFooter from "./pages/footer";
 export default {
+  name: "home",
+  components: {
+    HomeFooter
+  },
   data() {
     return {
-      active: 4,
+      active: "",
       icon: {
-        active: "../assets/Cart/1.png",
-        inactive: "../assets/Cart/1.png",
-        active_yuer: "../assets/Cart/2.png",
-        inactive_yuer: "../assets/Cart/2.png",
-        active_shenghuo: "../assets/Cart/3.png",
-        inactive_shenghuo: "../assets/Cart/3.png",
-        active_xiaoxi: "../assets/Cart/4.png",
-        inactive_xiaoxi: "../assets/Cart/4.png",
-        active_wode: "../assets/Cart/5.png",
-        inactive_wode: "../assets/Cart/5.png"
+        active: "./assets/Cart/qinbaobao.png",
+        inactive: "./assets/Cart/qinbaobao.png",
+        active_yuer: "./assets/Cart/yuer.png",
+        inactive_yuer: "./assets/Cart/yuer.png",
+        active_shenghuo: "./assets/Cart/shenghuo.png",
+        inactive_shenghuo: "./assets/Cart/shenghuo.png",
+        active_xiaoxi: "./assets/Cart/xiaoxi.png",
+        inactive_xiaoxi: "./assets/Cart/xiaoxi.png",
+        active_wode: "./assets/Cart/wode.png",
+        inactive_wode: "./assets/Cart/wode.png"
       }
     };
   },
@@ -109,10 +74,6 @@ export default {
     afterRead(file) {
       // 此时可以自行将文件上传至服务器
       console.log(file);
-    },
-    pushUrl(){
-      // 跳转到商城(生活)
-      this.$router.push("/Product");
     }
   }
 };
