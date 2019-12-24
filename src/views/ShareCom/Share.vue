@@ -53,7 +53,7 @@ p{
   margin:0
 }
 .bg{
- background-image:url("../../assets/chat/2.jpg");
+ background-image:url("../../../public/img/2.jpg");
  width:100%;
  height:13rem;
  color: #000;

@@ -23,8 +23,7 @@
         </div>
         <!-- 导航图标01 -->
         <div class="icon">
-          <!-- 点击跳转到纸尿裤详情页 -->
-          <img @click="Diapers" src="../assets/Details/icon1.png" alt />
+          <img src="../assets/Details/icon1.png" alt />
           <img src="../assets/Details/icon2.png" alt />
           <img src="../assets/Details/icon3.png" alt />
           <img src="../assets/Details/icon4.png" alt />
@@ -63,13 +62,13 @@
               <van-tab title="孕期">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" @click="go_details" v-for="(item,i) of list" :key="i">
+                  <div class="p_item" v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
-                    <img src="../assets/Details/product_img5.jpg" />
+                    <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>绵柔纸尿裤/拉拉裤</h4>
-                    <span>1片吸干6次尿 秒吸秒干</span>
-                    <h5>¥88</h5>
+                    <h4>{{item.title}}</h4>
+                    <span>{{item.subtitle}}</span>
+                    <h5>¥{{item.price}}</h5>
                   </div>
                 </div>
                 <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
@@ -77,7 +76,7 @@
               <van-tab ellipsis="false" title="0-12个月">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of list" :key="i">
+                  <div class="p_item">
                     <!-- 商品图片 -->
                     <img src="../assets/Details/product_img3.jpg" />
                     <!-- 商品名称 -->
@@ -91,12 +90,12 @@
               <van-tab title="1-3岁">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of list" :key="i">
+                  <div class="p_item">
                     <!-- 商品图片 -->
                     <img src="../assets/Details/product_img3.jpg" />
                     <!-- 商品名称 -->
-                    <h4>绵柔纸尿裤/拉拉裤</h4>
-                    <span>1片吸干6次尿 秒吸秒干</span>
+                    <h4>1</h4>
+                    <span>2</span>
                     <h5>¥88</h5>
                   </div>
                 </div>
@@ -105,7 +104,7 @@
               <van-tab title="3岁+">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item"  v-for="(item,i) of list" :key="i">
+                  <div class="p_item" >
                     <!-- 商品图片 -->
                     <img src="../assets/Details/product_img3.jpg" />
                     <!-- 商品名称 -->
@@ -129,57 +128,16 @@
 export default {
   data() {
     return {
-      list: [
-        {
-          img: "../assets/Details/product_img1.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        },
-        {
-          img: "../assets/Details/product_img2.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        },
-        {
-          img: "../assets/Details/product_img3.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        },
-        {
-          img: "../assets/Details/product_img4.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        },
-        {
-          img: "../assets/Details/product_img5.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        },
-        {
-          img: "../assets/Details/product_img5.jpg",
-          title: "绵柔纸尿裤/拉拉裤",
-          details: "1片吸干6次尿 秒吸秒干",
-          price: "¥88"
-        }
-      ],
+      pno:0,
+      row:[],
       activeName: "b",
       active: 0
     };
   },
+  created:function(){
+    this.loadMorer()
+  },
   methods: {
-    // 跳转到商品详情
-    go_details(){
-      this.$router.push("/Details");
-    },
-    // 跳转到纸尿裤详情页
-    Diapers(){
-      this.$router.push("/ProductDiapers");
-    },
     // 加载更多
     loadMore() {},
     // 跳转到购物车页面
@@ -187,7 +145,23 @@ export default {
     // 红包消息提示
     red() {
       this.$toast("恭喜领取成功,快去花钱吧");
-    }
+    },
+     loadMorer(){
+      // 创建变量URL
+      var url="/product"
+      //创建变量obj
+      this.pno++
+      var obj={pno:this.pno}
+      //发送ajax请求
+      this.axios.get(url,{params:obj}).then(res=>{
+        var list1=res.data.data
+        this.row=list1
+        console.log(this.row)
+        // var rows=this.list.concat(res.data.data)
+        // this.list =rows
+        // this.list=res.data.data
+     })
+     }
   }
 };
 </script>

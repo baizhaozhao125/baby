@@ -2,8 +2,8 @@
   <div id="contaoner">
   <div class="top"></div>
   <van-cell-group class="reg">
-  <van-field   v-model="username" clearable label="用户名" placeholder="请输入用户名"/>
-  <van-field   v-model="password" type="password" label="密 码" 
+  <van-field   v-model="uname" clearable label="用户名" placeholder="请输入用户名"/>
+  <van-field   v-model="upwd" type="password" label="密 码" 
   placeholder="请输入密码" />
   <van-field   v-model="pass" type="password" label="确认密码" 
   placeholder="请再次确认密码" />
@@ -19,8 +19,8 @@
 export default {
   data(){
     return{
-     username:"",
-      password:"",
+     uname:"",
+      upwd:"",
       pass:"",
       phone:"",
       email:"",
@@ -30,18 +30,18 @@ export default {
     reg(){
       //用户名验证
        var reg = /^([a-zA-Z0-9]|[\u4e00-\u9fa5]){3,12}$/;
-      if(!reg.test(this.username)){
+      if(!reg.test(this.uname)){
         alert("用户名不正确")
           return
       }
       //密码验证
-       var  regupwd=/^[a-zA-Z0-9]{6,18}$/
-      if(!regupwd.test(this.password)){
-        alert("密码不能含有非法字符，长度在6-18位")
+       var  regupwd=/^[a-zA-Z0-9]{4,18}$/
+      if(!regupwd.test(this.upwd)){
+        alert("密码不能含有非法字符，长度在4-18位")
         return
       }
       //确认密码
-      if(this.password!=this.pass){
+      if(this.upwd!=this.pass){
         alert("两次密码不一致")
            return
       }
@@ -57,7 +57,20 @@ export default {
         alert("请输入正确的邮箱号")
         return
       }
-      alert("登录成功")
+      var url="/reg"
+      this.axios.post(url,`uname=${this.uname}&upwd=${this.upwd}&phone=${this.phone}&email=${this.email}`)
+      .then(result=>{
+        console.log(result.data)
+       if(result.affectedRows=0){
+        alert("用户名或密码错误")
+      }else{
+        alert("注册成功")
+       this.$router.push("/Login")
+      }
+
+
+       })
+     
     }
   }
 }
@@ -81,7 +94,10 @@ export default {
   margin-top:0.7rem;
 }
 .btn{
-  margin-top:3rem;
+   width: 75%;
+  background-color: rgb(49, 201, 82);
+  border-radius: 0.8rem;
+  margin-top: 1.5rem;
 }
 .top{
   height:3rem;

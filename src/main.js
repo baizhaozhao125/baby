@@ -2,16 +2,19 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
-//引入样式重置
-// import './style/sty.css';
 // 导入所有vant 所有组件
 import Vant from 'vant';
-import 'vant/lib/index.css';
-
+import 'vant/lib/index.css'; 
+//引入axios
+import axios from "axios";
 Vue.use(Vant);
+//配置服务端基础地址
+axios.defaults.baseURL="http://127.0.0.1:4000/"
+//配置发放请求保存session信息
+axios.defaults.withCredentials = true;
+//将axios注册vue
+Vue.prototype.axios = axios;
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,
