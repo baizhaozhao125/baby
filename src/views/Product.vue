@@ -133,6 +133,7 @@ export default {
   },
   data() {
     return {
+<<<<<<< HEAD
       active:3,
       icon: {
         active: "./assets/Cart/qinbaobao.png",
@@ -146,6 +147,8 @@ export default {
         active_wode: "./assets/Cart/wode.png",
         inactive_wode: "./assets/Cart/wode.png"
       },
+=======
+>>>>>>> f157cbf5a122a659881bda14b1a6205722e229fe
       pno:0,
       row:[],
       activeName: "b",
