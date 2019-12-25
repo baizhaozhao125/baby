@@ -68,7 +68,8 @@
                     <!-- 商品名称 -->
                     <h4>{{item.title}}</h4>
                     <span>{{item.subtitle}}</span>
-                    <h5>¥{{item.price}}</h5>
+                    <h5></h5>
+                    <van-button @click="goDetails" type="primary" :data-id="item.sid">¥{{item.price}}</van-button>
                   </div>
                 </div>
                 <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
@@ -127,6 +128,7 @@
 </template>
 <script>
 import HomeFooter from "./pages/footer";
+import bus from '../components/bus.js';
 export default {
   components: {
     HomeFooter
@@ -146,6 +148,7 @@ export default {
         active_wode: "./assets/Cart/wode.png",
         inactive_wode: "./assets/Cart/wode.png"
       },
+      props:["id"],
       pno:0,
       row:[],
       activeName: "b",
@@ -179,6 +182,11 @@ export default {
         // this.list =rows
         // this.list=res.data.data
      })
+     },
+     goDetails(event){
+       var id=event.target.dataset.id
+       console.log(id)
+       this.$router.push({path:'/Details/',query:{id:id}});
      }
   }
 };

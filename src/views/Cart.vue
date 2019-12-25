@@ -42,16 +42,16 @@
     <div class="d1"></div>
     <van-cell title="收藏" is-link icon="../assets/Cart/shoucang.png" />
     <div class="d2"></div>
-    <!-- <home-footer></home-footer> -->
+    <home-footer></home-footer>
   </div>
 </template>
 
 <script>
-// import HomeFooter from "./pages/footer";
+import HomeFooter from "./pages/footer";
 export default {
   name: "home",
   components: {
-    // HomeFooter
+    HomeFooter
   },
   data() {
     return {
