@@ -1,28 +1,30 @@
 <template>
   <div>
+    <div v-for="(item,i) of list1" :key="i"> 
     <van-nav-bar title="商品" left-arrow style="position:fixed; top:0;
-            width:100%;" />
+            width:100%;"
+            @click-left="goBack" />
     <div class="det">
       <!-- 使用轮播 并关闭autoplay -->
       <van-swipe indicator-color="white">
         <van-swipe-item>
-          <img src="../assets/Details/product_img1.jpg" />
+          <img :src="item.pic" alt="#">
         </van-swipe-item>
         <van-swipe-item>
-          <img src="../assets/Details/product_img2.jpg" />
+          <img :src="item.pic" alt="#">
         </van-swipe-item>
         <van-swipe-item>
-          <img src="../assets/Details/product_img3.jpg" />
+        <img :src="item.pic" alt="#">
         </van-swipe-item>
         <van-swipe-item>
-          <img src="../assets/Details/product_img5.jpg" />
+        <img :src="item.pic" alt="#">
         </van-swipe-item>
       </van-swipe>
       <div class="desc">
-        <h3>鲸吸绵柔纸尿裤/拉拉裤第2代升级</h3>
-        <span class="s1">【新品】一片顶6片 4大升级 3大专利</span>
+        <h3>{{item.title}}</h3>
+        <span class="s1">{{item.subtitle}}</span>
         <div class="title">
-          <p class="p1">直供价¥98</p>
+          <p class="p1">直供价{{item.price}}</p>
           <p style="text-decoration: line-through;">¥178</p>
         </div>
       </div>
@@ -50,6 +52,7 @@
       <van-goods-action-button type="warning" text="加入购物车" />
       <van-goods-action-button type="danger" text="立即购买" />
     </van-goods-action>
+  </div>
   </div>
 </template>
 <script>
@@ -81,8 +84,33 @@ export default {
           img: "../assets/Details/product_img1.jpg",
           price: "¥88"
         }
-      ]
+      ],
+      list1:[]
     };
+  },
+  created(){
+      this.loadMore()
+    },
+  methods:{
+    goBack(){
+      this.$router.push("/Product");
+    },
+   loadMore(){
+      // 创建变量URL
+      var url="/details"
+      //创建变量obj
+      var id=this.$route.query.id
+      console.log(id)
+      var obj = {did:id};
+      //发送ajax请求
+      this.axios.get(url,{params:obj}).then(res=>{
+       this.list1=res.data.data
+       console.log(this.list1)
+     }).catch(err=>{
+       console.log(err)
+     })
+     },
+     
   }
 };
 </script>

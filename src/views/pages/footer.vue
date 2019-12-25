@@ -45,7 +45,7 @@ export default {
   name: 'HomeFooter',
  data() {
     return {
-      active:"",
+      active:0   ,
       icon: {
         active: "./assets/Cart/qinbaobao1.png",
         inactive: "./assets/Cart/qinbaobao.png",
