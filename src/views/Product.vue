@@ -62,17 +62,18 @@
               <van-tab title="孕期">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of row" :key="i">
+                  <div  class="p_item" @click="goDetails" :data-id="item.sid" v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
                     <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>{{item.title}}</h4>
-                    <span>{{item.subtitle}}</span>
-                    <h5></h5>
-                    <van-button @click="goDetails" type="primary" :data-id="item.sid">¥{{item.price}}</van-button>
+                    <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
+                    <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
+                    <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
+                    <van-button size="large" type="primary" >查看详情</van-button>
                   </div>
                 </div>
                 <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
+                <div style="margin-bottom:3.2rem;"></div>
               </van-tab>
               <van-tab ellipsis="false" title="0-12个月">
                 <!-- 商城图片 -->
@@ -162,7 +163,9 @@ export default {
     // 加载更多
     loadMore() {},
     // 跳转到购物车页面
-    shop() {},
+    shop() {
+      this.$router.push("/shopping");
+    },
     // 红包消息提示
     red() {
       this.$toast("恭喜领取成功,快去花钱吧");
@@ -192,6 +195,7 @@ export default {
 };
 </script>
 <style scoped>
+
 /* 红包图标 */
 #red {
   position: fixed;
@@ -201,7 +205,7 @@ export default {
 /* 购物车按钮 */
 #shop {
   position: fixed;
-  bottom: 1.85rem;
+  bottom: 3rem;
   right: 1rem;
 }
 /* 商城 父元素 product*/

@@ -1,6 +1,6 @@
 <template>
   <!-- 底部导航 -->
-  <div style="z-index:1">
+  <div>
     <van-tabbar v-model="active">
       <van-tabbar-item @click="pushQ">
         <span>亲宝宝</span>

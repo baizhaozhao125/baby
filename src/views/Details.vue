@@ -48,6 +48,7 @@
           <p>¥59</p>
         </div>
       </div>
+      <div style="margin-bottom:2.9rem;"></div>
       <van-goods-action style="z-index:10">
         <van-goods-action-icon icon="chat-o" text="客服" />
         <van-goods-action-icon icon="cart-o" text="购物车" />
