@@ -1,5 +1,6 @@
 <template>
   <!-- 底部导航 -->
+  <div style="z-index:1">
     <van-tabbar v-model="active">
       <van-tabbar-item @click="pushQ">
         <span>亲宝宝</span>
@@ -38,14 +39,15 @@
         />
       </van-tabbar-item>
     </van-tabbar>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'HomeFooter',
- data() {
+  name: "HomeFooter",
+  data() {
     return {
-      active:0   ,
+      active: 0,
       icon: {
         active: "./assets/Cart/qinbaobao1.png",
         inactive: "./assets/Cart/qinbaobao.png",
@@ -60,30 +62,40 @@ export default {
       }
     };
   },
-  methods:{
-    pushQ(){
-      this.$router.push("/share")
-    .then((res)=>{}).catch((err)=>{})},
-    pushY(){
-      this.$router.push("/Community")
-      .then((res)=>{}).catch((err)=>{})
+  methods: {
+    pushQ() {
+      this.$router
+        .push("/share")
+        .then(res => {})
+        .catch(err => {});
     },
-    pushS(){
-      this.$router.push("/Product")
-      .then((res)=>{}).catch((err)=>{})
+    pushY() {
+      this.$router
+        .push("/Community")
+        .then(res => {})
+        .catch(err => {});
     },
-    pushX(){
-      this.$router.push("/Chat")
-      .then((res)=>{}).catch((err)=>{})
+    pushS() {
+      this.$router
+        .push("/Product")
+        .then(res => {})
+        .catch(err => {});
     },
-    pushW(){
-      this.$router.push("/Cart")
-      .then((res)=>{}).catch((err)=>{})
+    pushX() {
+      this.$router
+        .push("/Chat")
+        .then(res => {})
+        .catch(err => {});
     },
+    pushW() {
+      this.$router
+        .push("/Cart")
+        .then(res => {})
+        .catch(err => {});
+    }
   }
-}
+};
 </script>
 
 <style>
-
 </style>
