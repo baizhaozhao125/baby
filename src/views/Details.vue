@@ -44,7 +44,7 @@
     </div>
     <!-- -->
     <div style="margin-bottom:2.8rem;"></div>
-    <van-goods-action style="z-index:2;">
+    <van-goods-action>
       <van-goods-action-icon icon="chat-o" text="客服" />
       <van-goods-action-icon icon="cart-o" text="购物车" />
       <van-goods-action-button type="warning" text="加入购物车" />

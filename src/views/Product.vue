@@ -66,9 +66,9 @@
                     <!-- 商品图片 -->
                     <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4 style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
-                    <span style="color:#aaa;font-size:0.9rem;margin:0 0.3rem;">{{item.subtitle}}</span>
-                    <h5 style="margin:0.3rem 0.3rem;color:#f00;">¥{{item.price}}</h5>
+                    <h4>{{item.title}}</h4>
+                    <span>{{item.subtitle}}</span>
+                    <h5>¥{{item.price}}</h5>
                   </div>
                 </div>
                 <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
@@ -122,7 +122,6 @@
     </van-tabs>
     <img id="red" @click="red" src="../assets/Details/red.png" />
     <img id="shop" @click="shop" src="../assets/Details/shop.png" />
-    <div style="margin-top:3.5rem;"></div>
     <home-footer></home-footer>
   </div>
 </template>
@@ -191,10 +190,10 @@ export default {
   bottom: 7rem;
   right: 1rem;
 }
-/* 购物车图标 */
+/* 购物车按钮 */
 #shop {
   position: fixed;
-  bottom: 2.95rem;
+  bottom: 1.85rem;
   right: 1rem;
 }
 /* 商城 父元素 product*/
@@ -211,11 +210,12 @@ export default {
 .p_item {
   width: 48%; /*一半 */
   border: 1px solid #ccc; /*边框 */
-  border-radius: 0.5rem; /*圆角 */
+  border-radius: 5px; /*圆角 */
   padding: 2px; /*加点内边距 */
   margin: 2px 0; /*加点外边距 */
   display: flex;
   flex-direction: column; /*按列排 */
+  min-height: 257px;
   align-items: flex-start;
 }
 /* 商品里的图片 */

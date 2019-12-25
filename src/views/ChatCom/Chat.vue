@@ -22,14 +22,14 @@
   <div class="frist">
   <img class="tu" src="../../assets/chat/20.jpg" >
   </div>
-  <home-footer></home-footer>
+  <!-- <home-footer></home-footer> -->
   </div>
 </template>
 <script>
-import HomeFooter from "../pages/footer";
+// import HomeFooter from "../pages/footer";
 export default {
   components: {
-    HomeFooter
+    // HomeFooter
   },
 }
 </script>

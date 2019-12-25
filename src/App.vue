@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>-->
 		</div>
 		<router-view />
-		<HomeFooter />
+		<!-- <HomeFooter /> -->
 		<!-- <van-tabbar v-model="active">
       <van-tabbar-item>
         <span>亲宝宝</span>
