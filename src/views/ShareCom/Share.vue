@@ -24,7 +24,7 @@
       <p class="la">分享宝宝的精彩瞬间</p>
     </div>
     <friends :name="name"></friends>
-    <home-footer></home-footer>
+    <!-- <home-footer></home-footer> -->
   </div>
 </template>
 <script>

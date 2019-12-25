@@ -20,8 +20,6 @@
       </div>
     </div>
    </div>
-   <!-- 底部导航遮挡  使用上外边距往上 -->
-   <div style="margin-top:3rem;"></div>
   </div>
 </template>
 <script>
