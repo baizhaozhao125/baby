@@ -19,9 +19,9 @@
       thumb="../assets/Cart/1.jpg"
     >
       <div slot="footer">
-        <div class="num">{{$store.getters.getAge}}</div>
-        <van-button @click="add1">+</van-button>
-        <van-button @click="sub1">-</van-button>
+        <div class="num">{{num}}</div>
+        <van-button @click="add">+</van-button>
+        <van-button @click="sub">-</van-button>
       </div>
     </van-card>
     <van-card
@@ -32,9 +32,9 @@
       thumb="../assets/Cart/2.jpg"
     >
       <div slot="footer">
-        <div class="num">{{$store.getters.getAge}}</div>
-        <van-button @click="add2">+</van-button>
-        <van-button @click="sub2">-</van-button>
+        <div class="num">{{num1}}</div>
+        <van-button @click="add1">+</van-button>
+        <van-button @click="sub1">-</van-button>
       </div>
     </van-card>
     <van-cell value="再够2减立享'69元3件,89元4件 进入活..." is-link />
@@ -47,9 +47,9 @@
       class="numr"
     >
       <div slot="footer">
-        <div class="num">{{$store.getters.getAge}}</div>
-        <van-button @click="add">+</van-button>
-        <van-button @click="sub">-</van-button>
+        <div class="num">{{num2}}</div>
+        <van-button @click="add2">+</van-button>
+        <van-button @click="sub2">-</van-button>
       </div>
     </van-card>
     <van-submit-bar  @submit="aaaaa" :price="3050" button-text="提交订单">
@@ -61,6 +61,13 @@
 
 <script>
 export default {
+  data() {
+    return {
+      num:1,
+      num1:1,
+      num2:1
+    };
+  },
   methods: {
     onClickLeft() {
       this.$router.push({ path: "/Product" });
@@ -72,23 +79,23 @@ export default {
       this.$router.push({ path: "/order" });
     },
     add(){
-      this.$store.commit("addNum")
+      this.num++
     },
     sub(){
-      this.$store.commit("subNum")
+      this.num--
     },
     add1(){
-      this.$store.commit("addNum")
+      this.num1++
     },
     sub1(){
-      this.$store.commit("subNum")
+      this.num1--
     },
     add2(){
-      this.$store.commit("addNum")
+      this.num2++
     },
     sub2(){
-      this.$store.commit("subNum")
-    }
+      this.num2--
+    },
   }
 };
 </script>
