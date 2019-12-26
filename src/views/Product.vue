@@ -62,14 +62,14 @@
               <van-tab title="孕期">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div  class="p_item" @click="goDetails" :data-id="item.sid" v-for="(item,i) of row" :key="i">
+                  <div  class="p_item"  v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
                     <img :src="item.pic" />
                     <!-- 商品名称 -->
                     <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
                     <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
                     <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
-                    <van-button size="large" type="primary" >查看详情</van-button>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="pink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
                 <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
@@ -188,7 +188,7 @@ export default {
      },
      goDetails(event){
        var id=event.target.dataset.id
-       console.log(id)
+      // console.log(id)
        this.$router.push({path:'/Details/',query:{id:id}});
      }
   }
