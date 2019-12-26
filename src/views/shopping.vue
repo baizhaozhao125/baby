@@ -61,7 +61,7 @@
 export default {
   methods: {
     onClickLeft() {
-      this.$router.push({ path: "/cart" });
+      this.$router.push({ path: "/Product" });
     },
     onClickRight() {
       Toast("按钮");
