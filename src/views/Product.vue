@@ -170,6 +170,10 @@ export default {
     red() {
       this.$toast("恭喜领取成功,快去花钱吧");
     },
+    addcat(){
+      
+
+    },
      loadMorer(){
       // 创建变量URL
       var url="/product"

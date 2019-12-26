@@ -29,7 +29,7 @@ export default {
   data(){
     return{
       list:mess, 
-      msgg:'这一刻的想法'
+      msgg:'宝宝的百天照,走过路过记得点赞哦'
     }
   },
   beforeDestroy(){
