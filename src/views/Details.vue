@@ -15,13 +15,10 @@
             <img :src="item.pic" alt="#" />
           </van-swipe-item>
           <van-swipe-item>
-            <img :src="item.pic" alt="#" />
+            <img :src="item.uic" alt="#" />
           </van-swipe-item>
           <van-swipe-item>
-            <img :src="item.pic" alt="#" />
-          </van-swipe-item>
-          <van-swipe-item>
-            <img :src="item.pic" alt="#" />
+            <img :src="item.qic" alt="#" />
           </van-swipe-item>
         </van-swipe>
         <div class="desc">

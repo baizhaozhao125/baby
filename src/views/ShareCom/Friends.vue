@@ -9,7 +9,7 @@
       <p class="mm">{{item.name}}</p>
       <p class="ss">{{item.time}}</p>
       </div>
-      <p class="int">{{msgg}}</p>
+      <div class="int">{{msgg}}</div>
         <div class="contai">
           <img class="img" :src="require('../../assets/chat/d.jpg')">
           <img class="img" :src="require('../../assets/chat/e.jpg')">
@@ -29,16 +29,19 @@ export default {
   data(){
     return{
       list:mess, 
-      msgg:'',
+      msgg:'这一刻的想法'
     }
+  },
+  beforeDestroy(){
+    bus.$off("msg")
   },
  props:["name"],
   created(){
       bus.$on('msg',data=>{
         this.msgg=data
-         console.log(this.msgg)
-      })
-    },
+      }
+      )
+    }
 }
 </script>
 
