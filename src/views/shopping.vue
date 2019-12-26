@@ -17,7 +17,7 @@
       price="9.90"
       desc="规格:西瓜红"
       title="婴儿洗澡水温计"
-      thumb="../assets/Cart/baodou.png"
+      thumb="../assets/Cart/1.jpg"
     >
       <div slot="footer">
         <van-button>+</van-button>
@@ -30,7 +30,7 @@
       price="29.00"
       desc="规格:3盒*200支"
       title="婴儿纸轴双头棉签200支装"
-      thumb="../assets/Cart/baodou.png"
+      thumb="../assets/Cart/2.jpg"
     >
       <div slot="footer">
         <van-button>+</van-button>
@@ -44,16 +44,17 @@
       price="19.00"
       desc="颜色:指甲刀套装 薄雾蓝"
       title="指甲护理4件套"
-      thumb="../assets/Cart/baodou.png"
+      thumb="../assets/Cart/3.jpg"
     >
       <div slot="footer">
         <van-button>+</van-button>
         <van-button>-</van-button>
       </div>
     </van-card>
-    <van-submit-bar :price="3050" button-text="提交订单">
-      <van-checkbox >全选</van-checkbox>
+    <van-submit-bar  @submit="aaaaa" :price="3050" button-text="提交订单">
+      <van-checkbox>全选</van-checkbox>
     </van-submit-bar>
+    <div style="margin-top:4rem"></div>
   </div>
 </template>
 
@@ -65,6 +66,9 @@ export default {
     },
     onClickRight() {
       Toast("按钮");
+    },
+    aaaaa() {
+      this.$router.push({ path: "/order" });
     }
   }
 };
@@ -74,7 +78,7 @@ export default {
 .one {
   display: flex;
 }
-.parent{
-  background:#e8e8e8;
+.parent {
+  background: #e8e8e8;
 }
 </style>

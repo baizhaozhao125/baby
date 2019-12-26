@@ -20,6 +20,7 @@
       </van-cell-group>
     </div>
     <div class="foot"></div>
+    <div class="foot1"></div>
   </div>
 </template>
 <script>
@@ -81,6 +82,14 @@ a {
 .foot {
   position: fixed;
   top: 38rem;
+  width: 100%;
+  height: 4rem;
+  background:#fff;
+  z-index:3;
+}
+.foot1 {
+  position: fixed;
+  top: 63.5rem;
   width: 100%;
   height: 4rem;
   background:#fff;
