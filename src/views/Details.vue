@@ -5,20 +5,20 @@
         title="商品"
         left-arrow
         style="position:fixed; top:0;
-            width:100%;"
+            width:100%;z-index:0"
         @click-left="goBack"
       />
       <div class="det">
         <!-- 使用轮播 并关闭autoplay -->
-        <van-swipe indicator-color="white">
+        <van-swipe indicator-color="white" class="swipe_img">
           <van-swipe-item>
-            <img :src="item.pic" alt="#" />
+            <img   :src="item.pic" />
           </van-swipe-item>
           <van-swipe-item>
-            <img :src="item.uic" alt="#" />
+            <img :src="item.uic"/>
           </van-swipe-item>
           <van-swipe-item>
-            <img :src="item.qic" alt="#" />
+            <img :src="item.qic" />
           </van-swipe-item>
         </van-swipe>
         <div class="desc">
@@ -117,6 +117,11 @@ export default {
 };
 </script>
 <style scoped>
+.swipe_img img{
+  z-index:10;
+  height: 100%;
+  margin-top:2.3rem;
+}
 /* 推荐 需要更多 */
 .p_list {
   /* 弹性 */

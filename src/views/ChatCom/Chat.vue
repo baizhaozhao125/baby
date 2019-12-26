@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div id="container" style="width:100%;">
     <!-- 顶部图表 -->
     <div class="all">
     <img class="d2" src="../../assets/chat/11.png" >  

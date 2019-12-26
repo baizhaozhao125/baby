@@ -42,6 +42,7 @@
     <div class="d1"></div>
     <van-cell title="收藏" is-link icon="../assets/Cart/shoucang.png" />
     <div class="d2"></div>
+    <div class="d3"></div>
     <!-- <home-footer></home-footer> -->
   </div>
 </template>
@@ -113,8 +114,9 @@ export default {
 }
 .d2 {
   width: 100%;
-  height: 25rem;
+  height: 2rem;
   background: #e8e8e8;
+  
 }
 .user {
   display: flex;
