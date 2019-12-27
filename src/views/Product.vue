@@ -2,7 +2,7 @@
   <div class="parent">
     <!-- 两个标签 -->
     <van-tabs v-model="activeName">
-      <van-tab title="社区" name="a">内容 1</van-tab>
+      <van-tab title="社区" name="a"></van-tab>
       <van-tab title="优品" name="b">
         <!-- 轮播图 -->
         <div class="swipe">
@@ -69,7 +69,7 @@
                     <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
                     <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
                     <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
-                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="hotpink" type="primary" >查看详情</van-button>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="pink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
                 <div style="margin-bottom:3.2rem;"></div>

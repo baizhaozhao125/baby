@@ -24,6 +24,8 @@
       <p class="la">分享宝宝的精彩瞬间</p>
     </div>
     <friends :name="name"></friends>
+    <!-- 加空div把页面整体显示 不然底部导航栏会遮盖住页面的内容 -->
+    <div style="margin-top:3rem;"></div>
     <home-footer></home-footer>
   </div>
 </template>

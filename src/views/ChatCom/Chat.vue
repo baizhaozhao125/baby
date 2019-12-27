@@ -4,7 +4,7 @@
     <div class="all">
     <img class="d2" src="../../assets/chat/11.png" >  
     <p class="size">分享</p>
-    <img class="d1" src="../../assets/chat/10.png" >                                                                                                                                                                                                                       
+    <img class="d1" src="../../assets/chat/10.png" >     
     </div>
   <!-- 分享图片 -->
   <div class="frist">
@@ -22,6 +22,8 @@
   <div class="frist">
   <img class="tu" src="../../assets/chat/20.jpg" >
   </div>
+  <!-- 加空div显示页面全部的内容 -->
+  <div style="margin-top:3rem;"></div>
   <home-footer></home-footer>
   </div>
 </template>
@@ -46,21 +48,21 @@ border:1.5rem solid white;
 .tu{
 width:88%;
 height:8rem;
-border-top:1.5rem solid white;
+border-top:1.2rem solid white;
 border-right:1.5rem solid white;
 border-left:1.5rem solid white;
 }
 .d1{
   width:1.4rem;
   height:1.4rem;
-  margin-right:1rem;
-  margin-top:1.3rem;
+  margin-right:1.2rem;
+  margin-top:1rem;
 }
 .d2{
   width:1.4rem;
   height:1.4rem;
-  margin-left:1rem;
-  margin-top:1.3rem;
+  margin-left:1.2rem;
+  margin-top:1rem;
 }
 .size{
   font-size:1rem;
