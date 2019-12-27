@@ -16,7 +16,7 @@
       tag="满减"
       price="19.00"
       desc="颜色:指甲刀套装 薄雾蓝"
-      title="指甲护理4件套"
+      title="指甲护理4件套"                                                                                              
       thumb="../assets/Cart/3.jpg"
       class="numr"
     >
