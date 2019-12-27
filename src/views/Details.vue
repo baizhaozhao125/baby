@@ -25,8 +25,7 @@
           <h3>{{item.title}}</h3>
           <span class="s1">{{item.subtitle}}</span>
           <div class="title">
-            <p class="p1">直供价{{item.price}}</p>
-            <p style="text-decoration: line-through;">¥178</p>
+            <p class="p1">直供价￥{{item.price}}</p>
           </div>
         </div>
       </div>
@@ -102,11 +101,10 @@ export default {
     var url="/cart";
     var obj={did,title,price}
     this.axios.get(url,{params:obj}).then(res=>{
-      console.log(res)
       if(res.data.code==-2){
         this.$router.push("/Login")
         }else{
-         alert("添加成功")
+          this.$messagebox("添加成功");
         }
       }).catch(err=>{console.log(err)})
     },

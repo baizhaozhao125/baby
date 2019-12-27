@@ -1,7 +1,6 @@
 
 <template>
   <div id="parent">
-    
     <!-- 顶部 -->
     <div class="content-title">
       <a href>
@@ -49,12 +48,8 @@
 </template>
 
 <script>
-// import HomeFooter from "./pages/footer";
 export default {
   name: "home",
-  // components: {
-  //   HomeFooter
-  // },
   data() {
     return {
       active: "",

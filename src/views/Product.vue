@@ -183,15 +183,10 @@ export default {
       this.axios.get(url,{params:obj}).then(res=>{
         var list1=res.data.data
         this.row=list1
-        // console.log(this.row)
-        // var rows=this.list.concat(res.data.data)
-        // this.list =rows
-        // this.list=res.data.data
      })
      },
      goDetails(event){
        var id=event.target.dataset.id
-      // console.log(id)
        this.$router.push({path:'/Details/',query:{id:id}});
      }
   }

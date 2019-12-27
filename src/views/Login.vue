@@ -56,7 +56,6 @@ export default {
       var obj = { uname: this.uname, upwd: this.upwd };
       console.log(obj);
       this.axios.get(url, { params: obj }).then(res => {
-        console.log(res);
         if (res.data.code == -1) {
           // alert("用户名或密码错误");
           this.$messagebox("用户名或密码错误");
