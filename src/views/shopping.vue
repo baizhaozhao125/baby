@@ -11,32 +11,6 @@
     <van-cell title="已满足'0.99元超值换购" is-link value="去换购" />
     <van-cell value="再够160.1元立享'满199减20,满299减30 进入...'" is-link />
 
-    <van-card
-      tag="满减"
-      price="9.90"
-      desc="规格:西瓜红"
-      title="婴儿洗澡水温计"
-      thumb="../assets/Cart/1.jpg"
-    >
-      <div slot="footer">
-        <div class="num">{{num}}</div>
-        <van-button @click="add">+</van-button>
-        <van-button @click="sub">-</van-button>
-      </div>
-    </van-card>
-    <van-card
-      tag="满减"
-      price="29.00"
-      desc="规格:3盒*200支"
-      title="婴儿纸轴双头棉签200支装"
-      thumb="../assets/Cart/2.jpg"
-    >
-      <div slot="footer">
-        <div class="num">{{num1}}</div>
-        <van-button @click="add1">+</van-button>
-        <van-button @click="sub1">-</van-button>
-      </div>
-    </van-card>
     <van-cell value="再够2减立享'69元3件,89元4件 进入活..." is-link />
     <van-card
       tag="满减"
@@ -65,10 +39,25 @@ export default {
     return {
       num:1,
       num1:1,
-      num2:1
+      num2:1,
+      list:[]
     };
   },
+  created(){
+    this.loadMore()
+  },
   methods: {
+    loadMore(){
+      this.axios.get("/findcart").then(res=>{
+        var row=res.data.data
+        this.list=row
+        console.log( this.list)
+        if(res.data.code==-2){
+          this.$router.push("/Login")
+        }
+      })
+
+    },
     onClickLeft() {
       this.$router.push({ path: "/Product" });
     },

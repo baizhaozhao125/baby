@@ -55,7 +55,7 @@ export default {
           alert("用户名或密码错误");
         } else {
           alert("登录成功");
-          this.$router.push("/Share");
+          this.$router.push("/Product");
         }
       });
     }
