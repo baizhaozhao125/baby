@@ -1,10 +1,11 @@
 <template>
   <div id="container">
     <!-- 顶部图表 -->
+    <div></div>
     <div class="all">
-      <img class="d2" src="../../assets/chat/11.png" />
-      <p class="size">分享</p>
-      <img class="d1" src="../../assets/chat/10.png" />
+      <img style="padding-left:1.5rem" src="../../assets/chat/11.png" />
+      <p class="size" style="margin: 0 auto">分享</p>
+      <img style="padding-right:1.5rem" src="../../assets/chat/10.png" />
     </div>
     <!-- 分享图片 -->
     <div>
@@ -51,7 +52,6 @@ export default {
 .all{
   display: flex;
   flex-direction:row;
-  justify-content: space-between;
   margin-top: 0.5rem;
   width:100%;
 }
@@ -69,5 +69,6 @@ export default {
   padding:0.5rem 2rem;
   margin-left:1.5%
 }
+
 </style>
 
