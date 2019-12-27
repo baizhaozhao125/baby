@@ -10,7 +10,7 @@ export default {
   created() { 
     setTimeout(()=>{
       this.$router.push('/Reg')
-    },5000)
+    },2000)
   }
 }
   
@@ -25,7 +25,7 @@ export default {
   }
   img{
     width:50%;
-    margin-left:5rem;
-    margin-top:20rem
+    margin-left:6.5rem;
+    margin-top:20rem;
   }
 </style>
