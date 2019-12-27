@@ -52,7 +52,7 @@
           <p>爆款榜单</p>
         </div>
         <van-notice-bar
-          text="神马宝贝计划 妈咪&宝宝 吃穿玩用 全部5折起 超值抢购 快快来抢 妈妈在也不用我买不起纸尿裤啦"
+          text="神马宝贝计划 妈咪&宝宝 吃穿玩用 全部5折起 超值抢购 快快来抢 妈妈在也不用担心我尿裤子啦"
           left-icon="volume-o"
         />
         <!-- 商品列表 -->
@@ -62,59 +62,62 @@
               <van-tab title="孕期">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" v-for="(item,i) of row" :key="i">
+                  <div  class="p_item"  v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
                     <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>{{item.title}}</h4>
-                    <span>{{item.subtitle}}</span>
-                    <h5></h5>
-                    <van-button @click="goDetails" type="primary" :data-id="item.sid">¥{{item.price}}</van-button>
+                    <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
+                    <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
+                    <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="hotpink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
-                <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
+                <div style="margin-bottom:3.2rem;"></div>
               </van-tab>
               <van-tab ellipsis="false" title="0-12个月">
-                <!-- 商城图片 -->
+                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item">
+                  <div  class="p_item"  v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
-                    <img src="../assets/Details/product_img3.jpg" />
+                    <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>绵柔纸尿裤/拉拉裤</h4>
-                    <span>1片吸干6次尿 秒吸秒干</span>
-                    <h5>¥88</h5>
+                    <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
+                    <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
+                    <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="pink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
-                <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
+                <div style="margin-bottom:3.2rem;"></div>
               </van-tab>
               <van-tab title="1-3岁">
-                <!-- 商城图片 -->
+                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item">
+                  <div  class="p_item"  v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
-                    <img src="../assets/Details/product_img3.jpg" />
+                    <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>1</h4>
-                    <span>2</span>
-                    <h5>¥88</h5>
+                    <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
+                    <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
+                    <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="pink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
-                <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
+                <div style="margin-bottom:3.2rem;"></div>
               </van-tab>
               <van-tab title="3岁+">
                 <!-- 商城图片 -->
                 <div class="p_list">
-                  <div class="p_item" >
+                  <div  class="p_item"  v-for="(item,i) of row" :key="i">
                     <!-- 商品图片 -->
-                    <img src="../assets/Details/product_img3.jpg" />
+                    <img :src="item.pic" />
                     <!-- 商品名称 -->
-                    <h4>绵柔纸尿裤/拉拉裤</h4>
-                    <span>1片吸干6次尿 秒吸秒干</span>
-                    <h5>¥88</h5>
+                    <h4  style="margin:0.3rem 0.3rem;">{{item.title}}</h4>
+                    <span style="font-size:0.8rem;color:#aaa;margin:0 0.3rem;">{{item.subtitle}}</span>
+                    <span style="margin:0.3rem 0.3rem; color:#f00;">¥{{item.price}}</span>
+                    <van-button size="large" @click="goDetails" :data-id="item.sid" color="pink" type="primary" >查看详情</van-button>
                   </div>
                 </div>
-                <van-button @click="loadMore" type="primary" size="large">点击加载更多</van-button>
+                <div style="margin-bottom:3.2rem;"></div>
               </van-tab>
             </van-tabs>
           </div>
@@ -162,10 +165,16 @@ export default {
     // 加载更多
     loadMore() {},
     // 跳转到购物车页面
-    shop() {},
+    shop() {
+      this.$router.push("/shopping");
+    },
     // 红包消息提示
     red() {
       this.$toast("恭喜领取成功,快去花钱吧");
+    },
+    addcat(){
+      
+
     },
      loadMorer(){
       // 创建变量URL
@@ -185,13 +194,14 @@ export default {
      },
      goDetails(event){
        var id=event.target.dataset.id
-       console.log(id)
+      // console.log(id)
        this.$router.push({path:'/Details/',query:{id:id}});
      }
   }
 };
 </script>
 <style scoped>
+
 /* 红包图标 */
 #red {
   position: fixed;
@@ -201,7 +211,7 @@ export default {
 /* 购物车按钮 */
 #shop {
   position: fixed;
-  bottom: 1.85rem;
+  bottom: 3rem;
   right: 1rem;
 }
 /* 商城 父元素 product*/

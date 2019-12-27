@@ -38,9 +38,9 @@ export default {
     };
   },
   methods: {
-    reg(){
-    this.$router.push("/Reg")
-  },
+    reg() {
+      this.$router.push("/Reg");
+    },
     btn() {
       var reg1 = /^([a-zA-Z]|[\u4e00-\u9fa5]){3,8}$/;
       var reg2 = /^[a-zA-Z\d\.\?]{4,12}$/;
@@ -52,20 +52,20 @@ export default {
         alert("请输入密码为4-13位字母或符号");
         return;
       }
-    var url="/login";
-    var obj={uname:this.uname,upwd:this.upwd}
-    console.log(obj)
-    this.axios.get(url,{params:obj}).then(res=>{
-      console.log(res)
-      if(res.data.code==-1){
-       alert("用户名或密码错误")
-      }else{
-        alert("登录成功")
-       this.$router.push("/Share")
-      }
-    })
+      var url = "/login";
+      var obj = { uname: this.uname, upwd: this.upwd };
+      console.log(obj);
+      this.axios.get(url, { params: obj }).then(res => {
+        console.log(res);
+        if (res.data.code == -1) {
+          alert("用户名或密码错误");
+        } else {
+          alert("登录成功");
+          this.$router.push("/Share");
+        }
+      });
     }
-  },
+  }
 };
 </script>
 <style scoped>
@@ -89,7 +89,7 @@ export default {
   background-color: rgb(245, 180, 83);
   border-radius: 0.8rem;
   margin-top: 1.5rem;
-  color:#fff;
+  color: #fff;
 }
 a {
   color: darkred;
@@ -104,4 +104,21 @@ a {
   margin-top:18rem ;
   margin-left:6.5rem;
 }
+.foot {
+  position: fixed;
+  top: 38rem;
+  width: 100%;
+  height: 4rem;
+  background:#fff;
+  z-index:3;
+}
+.foot1 {
+  position: fixed;
+  top: 63.5rem;
+  width: 100%;
+  height: 4rem;
+  background:#fff;
+  z-index:3;
+}
+#container{position: relative;}
 </style>

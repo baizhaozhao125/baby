@@ -42,17 +42,18 @@
     <div class="d1"></div>
     <van-cell title="收藏" is-link icon="../assets/Cart/shoucang.png" />
     <div class="d2"></div>
-    <home-footer></home-footer>
+    <div class="d3"></div>
+    <!-- <home-footer></home-footer> -->
   </div>
 </template>
 
 <script>
-import HomeFooter from "./pages/footer";
+// import HomeFooter from "./pages/footer";
 export default {
   name: "home",
-  components: {
-    HomeFooter
-  },
+  // components: {
+  //   HomeFooter
+  // },
   data() {
     return {
       active: "",
@@ -113,8 +114,9 @@ export default {
 }
 .d2 {
   width: 100%;
-  height: 25rem;
+  height: 2rem;
   background: #e8e8e8;
+  
 }
 .user {
   display: flex;

@@ -28,6 +28,9 @@ export default {
       text:"这一刻的想法..."
     }
   },
+  beforeDestroy(){
+    this.open()
+  },
    methods: {
     afterRead(file) {
       // 此时可以自行将文件上传至服务器
@@ -38,8 +41,7 @@ export default {
     },
     open(){
        bus.$emit('msg',this.text)
-        this.$router.push('/Share')
-        
+        this.$router.push('/Share').then(e=>{}).catch(err=>{})
     }
   }
 }
