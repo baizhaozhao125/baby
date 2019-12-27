@@ -19,6 +19,10 @@ Vue.config.productionTip = false
 import Vuex from "vuex"
 // 注册vuex
 Vue.use(Vuex)
+// 引入mintui
+import Mint from 'mint-ui'
+import 'mint-ui/lib/style.css'
+Vue.use(Mint)
 var store = new Vuex.Store({
   state: { num: 21 },
   mutations: {
