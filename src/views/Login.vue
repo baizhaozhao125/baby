@@ -43,11 +43,13 @@ export default {
       var reg1 = /^([a-zA-Z]|[\u4e00-\u9fa5]){3,8}$/;
       var reg2 = /^[a-zA-Z\d\.\?]{4,12}$/;
       if (!reg1.test(this.uname)) {
-        alert("请输入用户名为3-8位字母或汉字");
+        // alert("请输入用户名为3-8位字母或汉字");
+        this.$messagebox("请输入用户名为3-8位字母或汉字");
         return;
       }
       if (!reg2.test(this.upwd)) {
-        alert("请输入密码为4-13位字母或符号");
+        // alert("请输入密码为4-13位字母或符号");
+        this.$messagebox("请输入密码为4-13位字母或符号");
         return;
       }
       var url = "/login";
@@ -56,9 +58,11 @@ export default {
       this.axios.get(url, { params: obj }).then(res => {
         console.log(res);
         if (res.data.code == -1) {
-          alert("用户名或密码错误");
+          // alert("用户名或密码错误");
+          this.$messagebox("用户名或密码错误");
         } else {
-          alert("登录成功");
+          // alert("登录成功");
+          this.$messagebox("登陆成功");
           this.$router.push("/Product");
         }
       });

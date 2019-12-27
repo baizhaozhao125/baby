@@ -30,30 +30,35 @@ export default {
       //用户名验证
       var reg = /^([a-zA-Z0-9]|[\u4e00-\u9fa5]){3,12}$/;
       if (!reg.test(this.uname)) {
-        alert("用户名不正确");
+        // alert("用户名不正确");
+        this.$messagebox("用户名不正确");
         return;
       }
       //密码验证
       var regupwd = /^[a-zA-Z0-9]{4,18}$/;
       if (!regupwd.test(this.upwd)) {
-        alert("密码不能含有非法字符，长度在4-18位");
+        // alert("密码不能含有非法字符，长度在4-18位");
+        this.$messagebox("密码不能含有非法字符，长度在4-18位");
         return;
       }
       //确认密码
       if (this.upwd != this.pass) {
-        alert("两次密码不一致");
+        // alert("两次密码不一致");
+        this.$messagebox("两次密码不一致");
         return;
       }
       //验证手机号
       var regphone = /^1[3-9]\d{9}$/;
       if (!regphone.test(this.phone)) {
-        alert("手机号码格式不正确");
+        // alert("手机号码格式不正确");
+        this.$messagebox("手机号码格式不正确");
         return;
       }
       //验证邮箱
       var regEmail = /^\w+@\w+(\.[a-zA-z]{2,3})$/;
       if (!regEmail.test(this.email)) {
-        alert("请输入正确的邮箱号");
+        // alert("请输入正确的邮箱号");
+        this.$messagebox("请输入正确的邮箱号");
         return;
       }
       var url = "/reg";
@@ -65,9 +70,11 @@ export default {
         .then(result => {
           console.log(result.data);
           if ((result.affectedRows = 0)) {
-            alert("用户名或密码错误");
+            // alert("用户名或密码错误");
+            this.$messagebox("用户名或密码错误");
           } else {
-            alert("注册成功");
+            // alert("注册成功");
+            this.$messagebox("注册成功");
             this.$router.push("/Login");
           }
         });
