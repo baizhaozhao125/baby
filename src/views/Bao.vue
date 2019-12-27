@@ -9,8 +9,8 @@ export default {
   
   created() { 
     setTimeout(()=>{
-      this.$router.push('/Reg')
-    },5000)
+      this.$router.push('/Login')
+    },3000)
   }
 }
   
