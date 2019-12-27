@@ -1,6 +1,6 @@
 <template>
   <div id="contaoner">
-  <div class="top"></div>
+    <div id="bll">
   <van-cell-group class="reg">
   <van-field   v-model="uname" clearable label="用户名" placeholder="请输入用户名"/>
   <van-field   v-model="upwd" type="password" label="密 码" 
@@ -12,8 +12,10 @@
    <van-field  v-model="email" type="text" label="邮 箱" 
   placeholder="请输入邮箱" />
   </van-cell-group>
-  <van-button type="primary" size="large" class="btn" @click="reg">注册</van-button>
-  </div>
+  <van-button  class="bn" @click="reg">注册</van-button>
+      <p id="imgurl"></p>
+   </div>
+   </div>
 </template>
 <script>
 export default {
@@ -76,6 +78,13 @@ export default {
 }
 </script>
 <style scoped>
+ .reg{
+   padding:0 3rem;
+ }
+ #bll{
+   margin-top:6rem;
+
+ }
 .do{
   display:flex;
   justify-content:space-between;
@@ -93,18 +102,26 @@ export default {
   background-repeat:no-repeat;
   margin-top:0.7rem;
 }
-.btn{
+.bn{
    width: 75%;
-  background-color: rgb(49, 201, 82);
+  background-color:rgb(243, 177, 77);
   border-radius: 0.8rem;
   margin-top: 1.5rem;
+  margin-left:3rem;
+  color:beige
+
 }
-.top{
-  height:3rem;
-  text-align:center;
-  line-height:3rem;
-  color: #fff;
+#imgurl{
+  width:15rem;
+  height:15rem;
+  background-image:url('../assets/community/_20191225194515_03.png');
+  background-repeat: no-repeat;
+  margin-top:11rem ;
+  margin-left:6.5rem;
+  margin-bottom: 0
 }
+
+
 </style>
 
 
