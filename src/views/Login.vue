@@ -1,7 +1,9 @@
 <template>
-  <div id="container">
+  <div id="container"> 
+    
   <div id="all">
-  <van-cell-group>
+     <h2>登 录</h2>
+  <van-cell-group class="lo">
   <van-field
     v-model="uname" 
     clearable
@@ -22,7 +24,10 @@
    <a href="">忘记密码?</a> <a @click="reg">注册</a> 
 </van-cell-group>
   </div>
-</div>
+    <p id="imgurl"></p>
+
+      <!-- <div class="imgg"></div> -->
+ </div>     
 </template>
 <script>
 export default {
@@ -64,14 +69,24 @@ export default {
 };
 </script>
 <style scoped>
+  .lo{
+    padding: 0 1.5rem;
+  }
+ h2{
+   position: relative;
+   top:-7rem;
+   color: rgb(104, 80, 80);
+ }
 #all {
   text-align: center;
-  margin-top: 11rem;
-  background-color: black;
+  position: relative;
+  top: 11rem;
+  /* background-color: black; */
+ 
 }
 .btn {
   width: 75%;
-  background-color: rgb(49, 201, 82);
+  background-color: rgb(245, 180, 83);
   border-radius: 0.8rem;
   margin-top: 1.5rem;
   color:#fff;
@@ -79,5 +94,14 @@ export default {
 a {
   color: darkred;
   font-size: 0.3rem;
+  margin-top:3rem;
+}
+#imgurl{
+  width:15rem;
+  height:15rem;
+  background-image:url('../assets/community/_20191225194515_03.png');
+  background-repeat: no-repeat;
+  margin-top:18rem ;
+  margin-left:6.5rem;
 }
 </style>

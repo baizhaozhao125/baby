@@ -4,14 +4,15 @@ import Home from '../views/Home.vue'
 // import Product from '../component/Product.vue'
 import Community from '../views/Community.vue'
 import Login from '../views/Login.vue'
+import Bao from '../views/Bao.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
  {
     path: '/',
-    name: 'login',
-    component: Login
+    name: 'Bao',
+    component: Bao
   },
   {
     path: '/Login',
