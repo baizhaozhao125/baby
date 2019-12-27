@@ -48,8 +48,8 @@
       <div style="margin-bottom:2.9rem;"></div>
       <van-goods-action style="z-index:10">
         <van-goods-action-icon icon="chat-o" text="客服" />
-        <van-goods-action-icon icon="cart-o" text="购物车" />
-        <van-goods-action-button   type="warning" text="加入购物车" />
+        <van-goods-action-icon icon="cart-o" text="购物车" @click="cart" />
+        <van-goods-action-button   type="warning" text="加入购物车" @click="addcat" :data-title="item.title" :data-price="item.price" :data-did="item.did"/>
         <van-goods-action-button type="danger" text="立即购买" />
       </van-goods-action>
     </div>
@@ -92,6 +92,24 @@ export default {
     this.loadMore();
   },
   methods: {
+    cart(){
+      this.$router.push("/Shopping")
+    },
+    addcat(event){
+      var did=event.target.dataset.did
+      var title=event.target.dataset.title
+      var price=event.target.dataset.price
+    var url="/cart";
+    var obj={did,title,price}
+    this.axios.get(url,{params:obj}).then(res=>{
+      console.log(res)
+      if(res.data.code==-2){
+        this.$router.push("/Login")
+        }else{
+         alert("添加成功")
+        }
+      }).catch(err=>{console.log(err)})
+    },
     goBack() {
       this.$router.push("/Product");
     },
@@ -100,14 +118,12 @@ export default {
       var url = "/details";
       //创建变量obj
       var id = this.$route.query.id;
-      console.log(id);
       var obj = { did: id };
       //发送ajax请求
       this.axios
         .get(url, { params: obj })
         .then(res => {
           this.list1 = res.data.data;
-          console.log(this.list1);
         })
         .catch(err => {
           console.log(err);

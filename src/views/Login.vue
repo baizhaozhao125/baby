@@ -1,27 +1,33 @@
 <template>
-  <div id="container">
-    <div id="all">
-      <van-cell-group>
-        <van-field
-          v-model="uname"
-          clearable
-          label="用户名"
-          right-icon="question-o"
-          placeholder="请输入用户名"
-          @click-right-icon="$toast('请输入2-8字母或中文汉字')"
-        />
-        <van-field v-model="upwd" type="password" label="密码" placeholder="请输入密码" />
-      </van-cell-group>
-      <van-cell-group>
-        <van-button class="btn" @click="btn">登 录</van-button>
-        <br />
-        <a href>忘记密码?</a>
-        <a @click="reg">注册</a>
-      </van-cell-group>
-    </div>
-    <div class="foot"></div>
-    <div class="foot1"></div>
+  <div id="container"> 
+    
+  <div id="all">
+     <h2>登 录</h2>
+  <van-cell-group class="lo">
+  <van-field
+    v-model="uname" 
+    clearable
+    label="用户名"
+    right-icon="question-o"
+    placeholder="请输入用户名"
+    @click-right-icon="$toast('请输入2-8字母或中文汉字')"
+  />
+  <van-field
+    v-model="upwd"
+    type="password"
+    label="密码"
+    placeholder="请输入密码"
+  />
+</van-cell-group>
+<van-cell-group>
+  <van-button class="btn" @click="btn" >登 录</van-button><br>
+   <a href="">忘记密码?</a> <a @click="reg">注册</a> 
+</van-cell-group>
   </div>
+    <p id="imgurl"></p>
+
+      <!-- <div class="imgg"></div> -->
+ </div>     
 </template>
 <script>
 export default {
@@ -55,7 +61,7 @@ export default {
           alert("用户名或密码错误");
         } else {
           alert("登录成功");
-          this.$router.push("/Share");
+          this.$router.push("/Product");
         }
       });
     }
@@ -63,14 +69,24 @@ export default {
 };
 </script>
 <style scoped>
+  .lo{
+    padding: 0 1.5rem;
+  }
+ h2{
+   position: relative;
+   top:-7rem;
+   color: rgb(104, 80, 80);
+ }
 #all {
   text-align: center;
-  margin-top: 11rem;
-  background-color: black;
+  position: relative;
+  top: 11rem;
+  /* background-color: black; */
+ 
 }
 .btn {
   width: 75%;
-  background-color: rgb(49, 201, 82);
+  background-color: rgb(245, 180, 83);
   border-radius: 0.8rem;
   margin-top: 1.5rem;
   color: #fff;
@@ -78,6 +94,15 @@ export default {
 a {
   color: darkred;
   font-size: 0.3rem;
+  margin-top:3rem;
+}
+#imgurl{
+  width:15rem;
+  height:15rem;
+  background-image:url('../assets/community/_20191225194515_03.png');
+  background-repeat: no-repeat;
+  margin-top:18rem ;
+  margin-left:6.5rem;
 }
 .foot {
   position: fixed;

@@ -2,7 +2,7 @@
   <div class="parent">
     <!-- 两个标签 -->
     <van-tabs v-model="activeName">
-      <van-tab title="社区" name="a">内容 1</van-tab>
+      <van-tab title="社区" name="a"></van-tab>
       <van-tab title="优品" name="b">
         <!-- 轮播图 -->
         <div class="swipe">
@@ -172,10 +172,7 @@ export default {
     red() {
       this.$toast("恭喜领取成功,快去花钱吧");
     },
-    addcat(){
-      
 
-    },
      loadMorer(){
       // 创建变量URL
       var url="/product"
