@@ -13,17 +13,17 @@
 
     <van-cell value="再够2减立享'69元3件,89元4件 进入活..." is-link />
 
-    <div class="card">
+    <div class="card" v-for="(item,i) of list" :key="i">
       <div class="card_img">
         <img
           style="width:5.625rem;height:5.625rem;margin:1rem 0 0 1rem;"
           src="../../public/assets/Cart/3.jpg"
         />
       </div>
-      <div class="card_item">
-        <p>指甲护理4件套</p>
+      <div class="card_item" >
+        <p>{{item.title}}</p>
         <p>颜色:指甲刀套装 薄雾蓝</p>
-        <p>¥19.00</p>
+        <p>¥{{item.price}}</p>
       </div>
       <div class="card_btn" slot="footer">
         <div style="margin:0rem 0 1.2rem 4rem;">{{num2}}</div>
@@ -31,20 +31,6 @@
         <van-button @click="sub2">-</van-button>
       </div>
     </div>
-    <!-- <van-card
-      tag="满减"
-      price="19.00"
-      desc="颜色:指甲刀套装 薄雾蓝"
-      title="指甲护理4件套"
-      thumb="../assets/Cart/3.jpg"
-      class="numr"
-    >
-      <div slot="footer">
-        <div class="num">{{num2}}</div>
-        <van-button @click="add2">+</van-button>
-        <van-button @click="sub2">-</van-button>
-      </div>
-    </van-card>-->
     <van-submit-bar @submit="aaaaa" :price="3050" button-text="提交订单">
       <van-checkbox>全选</van-checkbox>
     </van-submit-bar>
@@ -56,8 +42,6 @@
 export default {
   data() {
     return {
-      num: 1,
-      num1: 1,
       num2: 1,
       list: []
     };
@@ -68,12 +52,11 @@ export default {
   methods: {
     loadMore() {
       this.axios.get("/findcart").then(res => {
-        var row = res.data.data;
-        this.list = row;
-        console.log(this.list);
         if (res.data.code == -2) {
           this.$router.push("/Login");
         }
+        var row = res.data.data;
+        this.list = row;
       });
     },
     onClickLeft() {
